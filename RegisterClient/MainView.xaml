@@ -1,0 +1,35 @@
+﻿<Window x:Class="RegisterClient.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cadastro de usuários" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label>Coloque as informações do usuário.</Label>
+        <Canvas>
+
+        </Canvas>
+        <Label Content="Nome" HorizontalAlignment="Left" Margin="88,13,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="131,16,0,0" Grid.Row="1" TextWrapping="Wrap" 
+                 Text="{Binding Path=Name,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="85,45,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="131,47,0,0" Grid.Row="1" TextWrapping="Wrap" 
+                 Text="{Binding Path=Email,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Telefone Celular" HorizontalAlignment="Left" Margin="28,72,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="131,75,0,0" Grid.Row="1" TextWrapping="Wrap" 
+                 Text="{Binding Path=MobilePhoneNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Telefone" HorizontalAlignment="Left" Margin="67,108,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.165,0.972"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="131,106,0,0" Grid.Row="1" TextWrapping="Wrap" 
+                 Text="{Binding Path=PhoneNumber,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Data de nascimento" HorizontalAlignment="Left" Margin="10,137,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="131,137,0,0" Grid.Row="1" TextWrapping="Wrap" 
+                 Text="{Binding Path=BirthDate, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Enviar" HorizontalAlignment="Left" Margin="160,177,0,0" Grid.Row="1" VerticalAlignment="Top"
+                Width="75" IsEnabled="{Binding Path=CanRegisterClient, UpdateSourceTrigger=PropertyChanged}"
+                Command="{Binding Path= RegisterClientCommand}"/>
+        <Label Content="{Binding Message, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="28,209,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+    </Grid>
+    
+</Window>
